@@ -20,6 +20,7 @@ def generateSystem():
         numpy.linalg.solve(numpy.array(coeffecients),numpy.array(results))
         return {'solutions': solutions, 'coeffecients':coeffecients, 'results': results}
     except numpy.linalg.LinAlgError:
+    #otherwise generate new system
         generateSystem()
 
 def createSystemImageFromText(system):
