@@ -1,0 +1,19 @@
+#equation{
+    margin-bottom: 16px;
+}
+#task{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.col-form-label{
+    margin-left: auto;
+}
+.input-div{
+    margin-right: auto;
+}
+.button-div{
+    margin: auto;
+}

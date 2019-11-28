@@ -9,7 +9,7 @@ from Cryptodome.Hash import SHA256
 
 app = flask.Flask(__name__)
 
-flag="Abbflagis{[A-z0-9_]*}"
+flag="Abbflagis{W7zyIpM0}"
 
 @app.route('/', methods = ['GET', 'POST'])
 def root():
@@ -21,6 +21,10 @@ def root():
         if (SHA256.new(params.encode('utf-8')).hexdigest() == dictData['checkSum']):
             flask.session['tasksCount']=int(dictData['taskNumber'])
             #is result right
+            try:
+                flask.session['solutions']
+            except KeyError:
+                return flask.Response(status=400)
             if (int(dictData['x'])==flask.session['solutions'][0] and int(dictData['y'])==flask.session['solutions'][1] and int(dictData['z'])==flask.session['solutions'][2]):
                 #if task number is 10000 return the flag
                 if (flask.session['tasksCount']==10000):
