@@ -26,8 +26,8 @@ def root():
             except KeyError:
                 return flask.Response(status=400)
             if (int(dictData['x'])==flask.session['solutions'][0] and int(dictData['y'])==flask.session['solutions'][1] and int(dictData['z'])==flask.session['solutions'][2]):
-                #if task number is 10000 return the flag
-                if (flask.session['tasksCount']==10000):
+                #if task number is 9999 return the flag
+                if (flask.session['tasksCount']==9999):
                     return flask.Response(json.dumps({'result': True, 'tasksToSolve': 10000-flask.session['tasksCount'], 'flag': flag}))
                 else:
                     flask.session['tasksCount']+=1
