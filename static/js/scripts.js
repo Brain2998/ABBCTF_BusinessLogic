@@ -23,7 +23,7 @@ $(document).ready(function() {
             success: function(result) {
                 var resultJSON=JSON.parse(result)
                 if (resultJSON.hasOwnProperty('flag')){
-                    alert('Congratulations! Flag is'+ resultJSON.flag)
+                    alert('Congratulations! Flag is '+ resultJSON.flag)
                 }
                 else{
                     taskNumber=10000-parseInt(resultJSON.tasksToSolve)

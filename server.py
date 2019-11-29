@@ -56,7 +56,7 @@ def generateEquation():
 if __name__ == "__main__":
     parser = configparser.ConfigParser()
     parser.read_file(open("config/config.ini", "r"))
-    with open("config/" + parser.get("Crypto", "SESSION_KEY"), 'r') as f:
+    with open("config/" + parser.get("Crypto", "SESSION_KEY"), 'rb') as f:
         sessionKey = f.read()
     app.config['SECRET_KEY']=sessionKey
     app.config['SESSION_TYPE']='filesystem'
