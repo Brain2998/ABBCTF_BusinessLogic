@@ -9,4 +9,4 @@ python3 server.py
 Run in docker:
 
 docker build -t business_logic .\
-docker run -p 9020:9020 -d business_logic
+docker run --restart always -p 9020:9020 -d business_logic
