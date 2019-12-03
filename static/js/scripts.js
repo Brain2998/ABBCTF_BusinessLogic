@@ -8,10 +8,9 @@ $(document).ready(function() {
         var urlFormData=new URLSearchParams(formData).toString();
         var encoder=new TextEncoder();
         var encodedData=encoder.encode(urlFormData)
-        var hash=await crypto.subtle.digest('SHA-256', encodedData)
-        const hashArray = Array.from(new Uint8Array(hash));
-        const hashDigest = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        urlFormData+='&checkSum='+hashDigest
+        var bitArray=sjcl.hash.sha256.hash(urlFormData)
+        var hash=sjcl.codec.hex.fromBits(bitArray)
+        urlFormData+='&checkSum='+hash
         $.ajax({
             async:true,
             type: "POST",
