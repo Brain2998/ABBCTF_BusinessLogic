@@ -1,5 +1,5 @@
 # ABBCTF_BusinessLogic
-Business Logic task for ABB CTF 2019
+Business Logic task for ABB CTF 2019. The task is to solve 10000 systems of linear equations
 
 Run locally:
 
